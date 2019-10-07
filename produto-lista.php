@@ -1,17 +1,7 @@
-<?php include("cabecalho.php");
-      include("conecta.php");
-      include("banco-produto.php"); 
-      include("logica-usuario.php"); ?>
+<?php require_once("cabecalho.php");     
+      require_once("banco-produto.php");?>
 
-<?php if(isset($_SESSION["success"])) {?>
-    <p class="alert-success"><?= $_SESSION["success"]?></p>    
-<?php 
-    unset($_SESSION["success"]);
-}?>
-
-
-
-
+<h1>Lista de produtos</h1>
 <table class="table table-striped table-bordered">
     <?php
         $produtos = listaProdutos($conexao);
@@ -36,4 +26,4 @@
     ?>
 </table>
 
-<?php include("rodape.php");?>
+<?php require_once("rodape.php");?>
